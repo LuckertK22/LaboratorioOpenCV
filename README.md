@@ -4,3 +4,4 @@
 |---|---|
 | `Lab30_Camara/` | Conexión y captura de video desde cámara |
 | `Lab31_Video/` | Uso y procesamiento de archivos de video con OpenCV |
+| `Lab32_Dibujo/` | Drawing on live camera: dibujo e interacción con el mouse sobre la cámara |
