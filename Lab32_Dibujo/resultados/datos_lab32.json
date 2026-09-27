@@ -1,0 +1,342 @@
+{
+  "equipo": {
+    "so": "Windows 11",
+    "python": "3.12.10",
+    "opencv": "5.0.0"
+  },
+  "resolucion": [
+    640,
+    480
+  ],
+  "4_4_parametros": [
+    [
+      "frame",
+      "Imagen sobre la que se dibuja",
+      "frame de la cámara 640x480x3"
+    ],
+    [
+      "(x,y)",
+      "Esquina inicial",
+      "(320, 240)"
+    ],
+    [
+      "(x+w,y+h)",
+      "Esquina opuesta",
+      "(480, 360)"
+    ],
+    [
+      "color",
+      "Color en BGR",
+      "(0, 0, 255) = rojo; también (0,255,0), (255,0,0), (0,255,255), (255,0,255)"
+    ],
+    [
+      "thickness",
+      "Grosor del borde",
+      "4; también 2, 15 y -1 (relleno)"
+    ]
+  ],
+  "4_3_variantes": [
+    {
+      "nombre": "guía (centro, rojo, 4)",
+      "x": 320,
+      "y": 240,
+      "w": 160,
+      "h": 120,
+      "color": [
+        0,
+        0,
+        255
+      ],
+      "grosor": 4
+    },
+    {
+      "nombre": "esquina sup. izq., verde",
+      "x": 20,
+      "y": 20,
+      "w": 160,
+      "h": 120,
+      "color": [
+        0,
+        255,
+        0
+      ],
+      "grosor": 4
+    },
+    {
+      "nombre": "más grande, azul, 2",
+      "x": 80,
+      "y": 60,
+      "w": 480,
+      "h": 360,
+      "color": [
+        255,
+        0,
+        0
+      ],
+      "grosor": 2
+    },
+    {
+      "nombre": "grosor 15, amarillo",
+      "x": 213,
+      "y": 160,
+      "w": 213,
+      "h": 160,
+      "color": [
+        0,
+        255,
+        255
+      ],
+      "grosor": 15
+    },
+    {
+      "nombre": "relleno (grosor -1), magenta",
+      "x": 213,
+      "y": 160,
+      "w": 160,
+      "h": 120,
+      "color": [
+        255,
+        0,
+        255
+      ],
+      "grosor": -1
+    },
+    {
+      "nombre": "se sale de la imagen",
+      "x": 560,
+      "y": 420,
+      "w": 160,
+      "h": 120,
+      "color": [
+        0,
+        128,
+        255
+      ],
+      "grosor": 4
+    }
+  ],
+  "4_7_interactivo": {
+    "clics": [
+      [
+        376,
+        156
+      ],
+      [
+        323,
+        130
+      ],
+      [
+        50,
+        106
+      ],
+      [
+        112,
+        156
+      ],
+      [
+        112,
+        156
+      ],
+      [
+        112,
+        156
+      ],
+      [
+        297,
+        210
+      ],
+      [
+        297,
+        210
+      ],
+      [
+        297,
+        210
+      ],
+      [
+        285,
+        98
+      ],
+      [
+        183,
+        76
+      ],
+      [
+        167,
+        276
+      ],
+      [
+        210,
+        362
+      ],
+      [
+        568,
+        63
+      ]
+    ],
+    "pt1": [
+      210,
+      362
+    ],
+    "pt2": [
+      568,
+      63
+    ]
+  },
+  "4_9_experimentos": {
+    "rectangulos_finales": [
+      {
+        "p1": [
+          268,
+          228
+        ],
+        "p2": [
+          132,
+          101
+        ],
+        "ancho": 136,
+        "alto": 127
+      },
+      {
+        "p1": [
+          44,
+          348
+        ],
+        "p2": [
+          462,
+          412
+        ],
+        "ancho": 418,
+        "alto": 64
+      },
+      {
+        "p1": [
+          494,
+          156
+        ],
+        "p2": [
+          235,
+          191
+        ],
+        "ancho": 259,
+        "alto": 35
+      }
+    ],
+    "eventos": [
+      [
+        "izq",
+        268,
+        228
+      ],
+      [
+        "izq",
+        132,
+        101
+      ],
+      [
+        "izq",
+        44,
+        348
+      ],
+      [
+        "izq",
+        462,
+        412
+      ],
+      [
+        "izq",
+        494,
+        156
+      ],
+      [
+        "izq",
+        235,
+        191
+      ]
+    ],
+    "capturas": [
+      "resultados/4_9_captura_1.jpg",
+      "resultados/4_9_captura_2.jpg",
+      "resultados/4_9_captura_3.jpg",
+      "resultados/4_9_captura_4.jpg",
+      "resultados/4_9_captura_5.jpg",
+      "resultados/4_9_captura_6.jpg",
+      "resultados/4_9_captura_7.jpg"
+    ]
+  },
+  "5_integradora": {
+    "resolucion": [
+      640,
+      480
+    ],
+    "rois": [
+      {
+        "esquina1": [
+          6,
+          8
+        ],
+        "esquina2": [
+          621,
+          478
+        ],
+        "caja": [
+          6,
+          8,
+          615,
+          470
+        ],
+        "ancho": 615,
+        "alto": 470,
+        "area": 289050
+      },
+      {
+        "esquina1": [
+          155,
+          126
+        ],
+        "esquina2": [
+          504,
+          320
+        ],
+        "caja": [
+          155,
+          126,
+          349,
+          194
+        ],
+        "ancho": 349,
+        "alto": 194,
+        "area": 67706
+      }
+    ],
+    "capturas": [
+      "resultados/anotador/anotacion_1.jpg",
+      "resultados/anotador/anotacion_2.jpg",
+      "resultados/anotador/anotacion_3.jpg",
+      "resultados/anotador/anotacion_4.jpg",
+      "resultados/anotador/anotacion_5.jpg",
+      "resultados/anotador/anotacion_6.jpg",
+      "resultados/anotador/anotacion_7.jpg",
+      "resultados/anotador/anotacion_8.jpg",
+      "resultados/anotador/anotacion_9.jpg",
+      "resultados/anotador/anotacion_10.jpg",
+      "resultados/anotador/anotacion_11.jpg"
+    ]
+  },
+  "6_reto_manual": {
+    "caja": [
+      377,
+      160,
+      57,
+      51
+    ],
+    "capturas": []
+  },
+  "6_reto_detector": {
+    "frames": 62,
+    "fps": 17.6,
+    "frames_con_rostro": 62,
+    "ms_detector": 26.6,
+    "mejor_confianza": 0.945
+  }
+}
