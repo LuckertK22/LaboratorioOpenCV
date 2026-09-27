@@ -6,21 +6,14 @@
 #
 # Uso desde terminal:  python camara_app.py            (cámara 0)
 #                      python camara_app.py 1          (otra cámara)
+#
+# Hay que darle clic a la ventana para que reciba las teclas.
 
 import os
 import sys
 import time
 
 import cv2
-
-# con opencv-python-headless no hay ventanas, en ese caso se simulan las teclas
-try:
-    cv2.namedWindow('prueba')
-    cv2.destroyWindow('prueba')
-    cv2.waitKey(1)
-    HAY_GUI = True
-except cv2.error:
-    HAY_GUI = False
 
 MODOS = {ord('1'): 'gris', ord('2'): 'canny', ord('3'): 'desenfoque', ord('4'): 'umbral'}
 
@@ -58,7 +51,7 @@ def abrir_writer(base, fps, tam):
     return None, None, None
 
 
-def app(fuente=0, respaldo=None, teclas_simuladas=None, limite_seg=None, carpeta='resultados/app'):
+def app(fuente=0, limite_seg=None, carpeta='resultados/app'):
     os.makedirs(carpeta, exist_ok=True)
     eventos = []
 
@@ -69,17 +62,12 @@ def app(fuente=0, respaldo=None, teclas_simuladas=None, limite_seg=None, carpeta
 
     # 1. conectar y verificar
     cap = cv2.VideoCapture(fuente)
-    if not cap.isOpened() or not cap.read()[0]:
-        log(f'no se pudo abrir la fuente {fuente}')
-        cap.release()
-        if respaldo is None:
-            return {'error': 'sin cámara', 'eventos': eventos}
-        fuente = respaldo
-        cap = cv2.VideoCapture(respaldo)
-        log(f'usando respaldo: {respaldo}')
+    if not cap.isOpened():
+        log(f'no se pudo abrir la cámara {fuente} (revisar permisos o si otro programa la está usando)')
+        return {'error': 'sin cámara', 'eventos': eventos}
     ok, frame = cap.read()
     if not ok:
-        log('la fuente abrió pero no entrega frames')
+        log('la cámara abrió pero no entrega frames')
         cap.release()
         return {'error': 'sin frames', 'eventos': eventos}
 
@@ -93,7 +81,7 @@ def app(fuente=0, respaldo=None, teclas_simuladas=None, limite_seg=None, carpeta
     for _ in range(20):
         cap.read()
     fps_med = 20 / (time.time() - t0)
-    if isinstance(fuente, int) and 5 <= fps_med <= 60:
+    if 5 <= fps_med <= 60:
         fps_grab = fps_med
     else:
         fps_grab = fps_prop if fps_prop > 0 else 20
@@ -111,7 +99,7 @@ def app(fuente=0, respaldo=None, teclas_simuladas=None, limite_seg=None, carpeta
         while cap.isOpened():
             ret, frame = cap.read()
             if not ret:
-                log('read() devolvió False (se desconectó la cámara o terminó el video)')
+                log('read() devolvió False (se desconectó la cámara)')
                 break
             n += 1
 
@@ -136,12 +124,9 @@ def app(fuente=0, respaldo=None, teclas_simuladas=None, limite_seg=None, carpeta
                 cv2.circle(vista, (w - 25, 22), 9, (0, 0, 255), -1)
                 cv2.putText(vista, 'REC', (w - 75, 28), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 255), 2)
 
-            if HAY_GUI:
-                cv2.imshow('Original', vista)
-                cv2.imshow('Procesado', procesado)
-                k = cv2.waitKey(1) & 0xFF   # una sola lectura del teclado por ciclo
-            else:
-                k = ord(teclas_simuladas.get(n, '\xff')) if teclas_simuladas else 255
+            cv2.imshow('Original', vista)
+            cv2.imshow('Procesado', procesado)
+            k = cv2.waitKey(1) & 0xFF   # una sola lectura del teclado por ciclo
 
             if k == ord('q'):
                 log('q presionada, saliendo')
@@ -191,10 +176,9 @@ def app(fuente=0, respaldo=None, teclas_simuladas=None, limite_seg=None, carpeta
                            'duracion_archivo_s': round(frames_rec / fps_grab, 2)})
             log('se cerró la grabación que seguía abierta')
         cap.release()
-        if HAY_GUI:
-            cv2.destroyAllWindows()
-            for _ in range(5):
-                cv2.waitKey(1)   # en Mac sin esto las ventanas quedan pegadas
+        cv2.destroyAllWindows()
+        for _ in range(5):
+            cv2.waitKey(1)   # a veces las ventanas se quedan pegadas si no se hace esto
         log(f'recursos liberados (cap.isOpened() = {cap.isOpened()})')
 
     return {'fuente': str(fuente), 'resolucion': [w, h], 'fps_propiedad': fps_prop,
@@ -205,7 +189,7 @@ def app(fuente=0, respaldo=None, teclas_simuladas=None, limite_seg=None, carpeta
 
 if __name__ == '__main__':
     fuente = int(sys.argv[1]) if len(sys.argv) > 1 else 0
-    resumen = app(fuente=fuente, respaldo='DATA/camara_simulada.mp4')
+    resumen = app(fuente=fuente)
     print()
     print('Capturas:', len(resumen.get('capturas', [])))
     for v in resumen.get('videos', []):
