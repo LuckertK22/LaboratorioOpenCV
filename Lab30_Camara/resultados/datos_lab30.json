@@ -1,0 +1,258 @@
+{
+  "equipo": {
+    "so": "Windows 11",
+    "python": "3.12.10",
+    "opencv": "5.0.0",
+    "hay_gui": true,
+    "backends_camara": [
+      "GSTREAMER",
+      "MSMF",
+      "DSHOW",
+      "FFMPEG",
+      "UEYE",
+      "OBSENSOR"
+    ]
+  },
+  "4_1_indices": [
+    {
+      "indice": 0,
+      "isOpened": true,
+      "read": true,
+      "backend": "MSMF",
+      "shape": [
+        480,
+        640,
+        3
+      ]
+    },
+    {
+      "indice": 1,
+      "isOpened": false,
+      "read": false,
+      "backend": null,
+      "shape": null
+    },
+    {
+      "indice": 2,
+      "isOpened": false,
+      "read": false,
+      "backend": null,
+      "shape": null
+    },
+    {
+      "indice": 3,
+      "isOpened": false,
+      "read": false,
+      "backend": null,
+      "shape": null
+    }
+  ],
+  "fuente": "camara 0",
+  "4_3_gris": {
+    "fuente": "camara 0",
+    "resolucion": [
+      640,
+      480
+    ],
+    "frames": 554,
+    "segundos": 18.55,
+    "fps": 29.9
+  },
+  "4_4_operaciones": {
+    "gris": {
+      "frames": 173,
+      "fps": 28.8,
+      "ms_operacion": 0.301
+    },
+    "gaussiano 9x9": {
+      "frames": 183,
+      "fps": 30.3,
+      "ms_operacion": 1.159
+    },
+    "canny": {
+      "frames": 178,
+      "fps": 29.3,
+      "ms_operacion": 1.279
+    },
+    "invertida": {
+      "frames": 42,
+      "fps": 27.9,
+      "ms_operacion": 0.39
+    }
+  },
+  "4_5_captura": {
+    "archivos": [
+      "resultados/captura_1.jpg",
+      "resultados/captura_2.jpg",
+      "resultados/captura_3.jpg",
+      "resultados/captura_4.jpg",
+      "resultados/captura_5.jpg",
+      "resultados/captura_6.jpg",
+      "resultados/captura_7.jpg",
+      "resultados/captura_8.jpg",
+      "resultados/captura_9.jpg",
+      "resultados/captura_10.jpg",
+      "resultados/captura_11.jpg",
+      "resultados/captura_12.jpg",
+      "resultados/captura_13.jpg"
+    ],
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "kb": 45
+  },
+  "4_6_grabacion": {
+    "fuente": "camara 0",
+    "writer_abierto": true,
+    "info": {
+      "abre": true,
+      "frames_leidos": 127,
+      "fps_archivo": 25.0,
+      "fourcc_leido": "FMP4",
+      "kb": 422
+    },
+    "frames": 127,
+    "segundos_reales": 4.35,
+    "fps_reales": 29.2,
+    "duracion_archivo_s": 5.08
+  },
+  "4_6_codecs": [
+    {
+      "fourcc": "XVID",
+      "ext": ".mp4",
+      "writer_abierto": true,
+      "abre": true,
+      "frames_leidos": 30,
+      "fps_archivo": 25.0,
+      "fourcc_leido": "FMP4",
+      "kb": 90
+    },
+    {
+      "fourcc": "XVID",
+      "ext": ".avi",
+      "writer_abierto": true,
+      "abre": true,
+      "frames_leidos": 30,
+      "fps_archivo": 25.0,
+      "fourcc_leido": "FMP4",
+      "kb": 96
+    },
+    {
+      "fourcc": "mp4v",
+      "ext": ".mp4",
+      "writer_abierto": true,
+      "abre": true,
+      "frames_leidos": 30,
+      "fps_archivo": 25.0,
+      "fourcc_leido": "FMP4",
+      "kb": 90
+    },
+    {
+      "fourcc": "MJPG",
+      "ext": ".avi",
+      "writer_abierto": true,
+      "abre": true,
+      "frames_leidos": 30,
+      "fps_archivo": 25.0,
+      "fourcc_leido": "MJPG",
+      "kb": 276
+    },
+    {
+      "fourcc": "avc1",
+      "ext": ".mp4",
+      "writer_abierto": true,
+      "abre": true,
+      "frames_leidos": 30,
+      "fps_archivo": 25.0,
+      "fourcc_leido": "h264",
+      "kb": 509
+    }
+  ],
+  "4_6_errores": {
+    "tam_malo": {
+      "abre": false
+    },
+    "gris_malo": {
+      "abre": false
+    },
+    "gris_bien": {
+      "abre": true,
+      "frames_leidos": 30,
+      "fps_archivo": 25.0,
+      "fourcc_leido": "FMP4",
+      "kb": 85
+    }
+  },
+  "4_8_reto": {
+    "frames": 128,
+    "fps": 26.0
+  },
+  "5_integradora": {
+    "fuente": "0",
+    "resolucion": [
+      640,
+      480
+    ],
+    "fps_propiedad": 30.0,
+    "fps_medidos": 29.73,
+    "fps_grabacion": 29.73,
+    "frames_mostrados": 569,
+    "fps_visualizacion": 55.6,
+    "capturas": [
+      {
+        "original": "resultados/app/captura_1_original.jpg",
+        "procesada": "resultados/app/captura_1_umbral.jpg",
+        "pantalla": "resultados/app/pantalla_1.jpg",
+        "modo": "umbral"
+      },
+      {
+        "original": "resultados/app/captura_2_original.jpg",
+        "procesada": "resultados/app/captura_2_umbral.jpg",
+        "pantalla": "resultados/app/pantalla_2.jpg",
+        "modo": "umbral"
+      },
+      {
+        "original": "resultados/app/captura_3_original.jpg",
+        "procesada": "resultados/app/captura_3_umbral.jpg",
+        "pantalla": "resultados/app/pantalla_3.jpg",
+        "modo": "umbral"
+      },
+      {
+        "original": "resultados/app/captura_4_original.jpg",
+        "procesada": "resultados/app/captura_4_umbral.jpg",
+        "pantalla": "resultados/app/pantalla_4.jpg",
+        "modo": "umbral"
+      }
+    ],
+    "videos": [
+      {
+        "ruta": "resultados/app/grabacion_1.mp4",
+        "frames": 144,
+        "duracion_real_s": 4.81,
+        "duracion_archivo_s": 4.84,
+        "abre": true,
+        "frames_leidos": 144,
+        "fps_archivo": 29.727,
+        "fourcc_leido": "FMP4",
+        "kb": 7347
+      }
+    ],
+    "eventos": [
+      "22:01:47 fuente 0 conectada, resolución 640x480, backend MSMF",
+      "22:01:47 FPS propiedad=30.0, medidos=29.7, para grabar uso 29.7",
+      "22:01:52 modo -> canny",
+      "22:01:53 modo -> desenfoque",
+      "22:01:54 modo -> umbral",
+      "22:01:56 captura guardada: resultados/app/captura_1_original.jpg, resultados/app/captura_1_umbral.jpg",
+      "22:01:57 captura guardada: resultados/app/captura_2_original.jpg, resultados/app/captura_2_umbral.jpg",
+      "22:01:58 captura guardada: resultados/app/captura_3_original.jpg, resultados/app/captura_3_umbral.jpg",
+      "22:02:00 grabando en resultados/app/grabacion_1.mp4 con mp4v a 29.7 fps",
+      "22:02:04 grabación detenida: 144 frames en 4.8 s",
+      "22:02:06 captura guardada: resultados/app/captura_4_original.jpg, resultados/app/captura_4_umbral.jpg",
+      "22:02:06 q presionada, saliendo",
+      "22:02:07 recursos liberados (cap.isOpened() = False)"
+    ]
+  }
+}
