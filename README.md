@@ -3,4 +3,4 @@
 | Carpeta | Práctica |
 |---|---|
 | `Lab31_Video/` | Uso y procesamiento de archivos de video con OpenCV |
-| `Lab30_Camara/` | Conexión y captura de video desde cámara (en desarrollo) |
+| `Lab30_Camara/` | Conexión y captura de video desde cámara (pendiente: ejecutar en el portátil con la cámara) |
